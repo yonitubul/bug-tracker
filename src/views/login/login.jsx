@@ -9,7 +9,7 @@ export default function Login (){
         name:"",
         password:""
     })
-     function handleInput(e){
+     const handleInput=(e)=>{
         setFormInput({
             ...formInput,
             [e.target.name]: e.target.value
@@ -24,7 +24,7 @@ export default function Login (){
    <div className="login">
        <form className="login-panel">
            <h1>Login:</h1>
-           <input type='name' name='text' placeholder="User Name" onChange={handleInput} value={formInput.name}></input>
+           <input type='text' name='name' placeholder="User Name" onChange={handleInput} value={formInput.name}></input>
            <input name="password" type='password' placeholder="Password" onChange={handleInput} value={formInput.password}></input>
            <button type="submit" onClick={submit}>Sign In</button>
        </form>

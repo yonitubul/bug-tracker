@@ -1,0 +1,11 @@
+.login-div{
+    width:100vw;
+    height: 105vh;
+    background: url(../../images/borisunsplash.jpg) ;
+    background-size:cover ;
+    margin-left:-20.6vw;
+    margin-top: -27px;
+}
+h1{
+    color: lightcoral; ;
+}

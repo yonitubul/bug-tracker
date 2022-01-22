@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux'
 import {signIn} from '../../controllers/redux/authSlice'
+import './login.css'
 
 export default function Login (){
 
@@ -15,13 +16,13 @@ export default function Login (){
             [e.target.name]: e.target.value
         })
      }
-     function submit(e){
+     const submit=(e)=>{
          dispatch(signIn(formInput));
          e.preventDefault();
      }
 
     return(
-   <div className="login">
+   <div className="login-div">
        <form className="login-panel">
            <h1>Login:</h1>
            <input type='text' name='name' placeholder="User Name" onChange={handleInput} value={formInput.name}></input>

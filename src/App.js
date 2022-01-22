@@ -9,7 +9,7 @@ function App() {
       style={{ minHeight: "100vh" }}
     >
       <div className="w-100" style={{maxWidth: "400px"}}>
-        <SignUp/>~
+        <SignUp/>
       </div>
     </Container>
   );

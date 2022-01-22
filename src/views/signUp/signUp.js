@@ -1,11 +1,14 @@
 import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Card, Form, Button } from "react-bootstrap";
+import { createUser } from "../../controllers/redux/authSlice";
 
 export default function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
 
+  const dispatch = useDispatch();
   const [currentUser, setCurrentUser] = useState({
     email: "",
     password: "",
@@ -17,6 +20,10 @@ export default function SignUp() {
       ...currentUser,
       [e.target.name]: e.target.value,
     });
+  };
+  const handleSubmit = (e) => {
+    dispatch(createUser(currentUser));
+    e.preventDefault();
   };
   return (
     <>
@@ -58,9 +65,11 @@ export default function SignUp() {
               ></Form.Control>
             </Form.Group>
             <Button
+              name="submit"
               type="submit"
               className="w-100"
               style={{ marginTop: "10px" }}
+              onSubmit={handleSubmit}
             >
               Sign Up
             </Button>

@@ -6,9 +6,12 @@ import {useSelector} from "react-redux"
 import {BrowserRouter as Router} from "react-router-dom"
 import Sidebar from "./views/sidebar/sidebar"
 import ViewBugs from "./views/viewBugs"
+import { getDefaultMiddleware } from '@reduxjs/toolkit';
+
 
 function App() {
     const {auth} = useSelector(state => state);
+   
   return (
   <Router>
       {!auth.loggedIn ? <Login/> : <h1>Hello</h1>}

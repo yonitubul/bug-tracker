@@ -13,7 +13,7 @@ useEffect(()=>{
 
   return <div className="page-container">
       {bugs.map((bug,key)=>{
-          <BugCard key={key} bug={bug}/>
+          return <BugCard key={key} bug={bug}/>
       })}
   </div>;
 }
